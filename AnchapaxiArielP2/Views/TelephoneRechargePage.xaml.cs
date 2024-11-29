@@ -7,7 +7,7 @@ public partial class TelephoneRechargePage : ContentPage
 		InitializeComponent();
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.txt";
+        string randomFileName = "ArielAnchapaxi.txt";
 
         LoadInformation(Path.Combine(appDataPath, randomFileName));
     }
@@ -19,8 +19,21 @@ public partial class TelephoneRechargePage : ContentPage
 
         if (File.Exists(fileName))
         {
-            information.Name = File.ReadAllText(fileName);
-            information.TelephoneNumber = File.ReadAllText(fileName);
+            string text = File.ReadAllText(fileName);
+            int positionNewLine = text.IndexOf(',');
+
+            if (positionNewLine != -1)
+            {
+                // Extraer la parte de la cadena antes de "\n"
+                IEnumerable<string> strings = text.Split(new char[] { ',' });
+                information.TelephoneNumber = strings.First();
+                information.Name = strings.Last();
+            }
+        } 
+        else
+        {
+            information.TelephoneNumber = "0992681681";
+            information.Name = "Ariel Anchapaxi";
         }
 
         BindingContext = information;
@@ -28,9 +41,11 @@ public partial class TelephoneRechargePage : ContentPage
 
     private async void Save_Information(object sender, EventArgs e)
     {
-        if (BindingContext is Models.TelephoneRecharge information)
-            File.WriteAllText(information.FileName, TextEditor.Text);
+        string appDataPath = FileSystem.AppDataDirectory;
+        string randomFileName = "ArielAnchapaxi.txt";
+        
+        File.WriteAllText(appDataPath+randomFileName, TextEditorName.Text + "," + TextEditorNumber.Text);
 
-        await Shell.Current.GoToAsync("..");
+        await Navigation.PopToRootAsync();
     }
 }
