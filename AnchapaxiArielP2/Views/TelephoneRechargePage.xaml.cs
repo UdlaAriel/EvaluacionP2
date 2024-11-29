@@ -7,9 +7,9 @@ public partial class TelephoneRechargePage : ContentPage
 		InitializeComponent();
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = "ArielAnchapaxi.txt";
+        string fileName = "ArielAnchapaxi.txt";
 
-        LoadInformation(Path.Combine(appDataPath, randomFileName));
+        LoadInformation(Path.Combine(appDataPath, fileName));
     }
 
     public void LoadInformation(string fileName)
@@ -42,9 +42,11 @@ public partial class TelephoneRechargePage : ContentPage
     private async void Save_Information(object sender, EventArgs e)
     {
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = "ArielAnchapaxi.txt";
-        
-        File.WriteAllText(appDataPath+randomFileName, TextEditorName.Text + "," + TextEditorNumber.Text);
+        string fileName = "ArielAnchapaxi.txt";
+        string fullFileName = Path.Combine(appDataPath, fileName);
+
+        File.WriteAllText(fullFileName, TextEditorName.Text + "," + TextEditorNumber.Text);
+        LoadInformation(fullFileName);
 
         await Navigation.PopToRootAsync();
     }

@@ -13,7 +13,6 @@
             HorizontalOptions="Center" />
         <Editor
             x:Name="TextEditorName"
-            MinimumWidthRequest="50"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             />
@@ -25,13 +24,23 @@
             />
         <Editor
             x:Name="TextEditorNumber"
-            WidthRequest="50"
             VerticalOptions="Center"
+            HorizontalOptions="Center"
+            />
+        <Label
+            x:Name="ThirdLabel"
+            Text="La última recarga fue realizada por: "
             HorizontalOptions="Center"
             />
         <Label
             x:Name="LabelName"
             Text="{Binding Name}"
+            HorizontalOptions="Center"
+            />
+        <Label
+            x:Name="LabelTelephoneNumber"
+            Text="{Binding TelephoneNumber}"
+            HorizontalOptions="Center"
             />
 
         <Button
