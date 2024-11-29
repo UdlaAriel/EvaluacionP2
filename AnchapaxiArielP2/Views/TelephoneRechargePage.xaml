@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnchapaxiArielP2.Views.TelephoneRechargePage"
+             Title="TelephoneRechargePage">
+    <ContentPage.BindingContext>
+        
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout VerticalOptions="Center" Padding="20">
+        <Label 
+            Text="Ingrese el número de teléfono"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Editor
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            />
+        <Label
+            Text="Ingrese el nombre de quien realiza la recarga:"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+        <Label
+            Text="{Binding }"
+            />
+
+    </VerticalStackLayout>
+</ContentPage>
