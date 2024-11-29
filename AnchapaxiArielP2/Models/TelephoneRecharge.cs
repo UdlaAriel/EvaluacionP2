@@ -10,6 +10,6 @@ namespace AnchapaxiArielP2.Models
     {
         public string FileName { get; set; }
         public string Name { get; set; }
-        public string TelephoneNumber { get; set;
+        public string TelephoneNumber { get; set;}
     }
 }

@@ -7,7 +7,7 @@ public partial class TelephoneRechargePage : ContentPage
 		InitializeComponent();
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
+        string randomFileName = $"{Path.GetRandomFileName()}.txt";
 
         LoadInformation(Path.Combine(appDataPath, randomFileName));
     }
@@ -24,5 +24,13 @@ public partial class TelephoneRechargePage : ContentPage
         }
 
         BindingContext = information;
+    }
+
+    private async void Save_Information(object sender, EventArgs e)
+    {
+        if (BindingContext is Models.TelephoneRecharge information)
+            File.WriteAllText(information.FileName, TextEditor.Text);
+
+        await Shell.Current.GoToAsync("..");
     }
 }

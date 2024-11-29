@@ -3,14 +3,22 @@
     x:Class="AnchapaxiArielP2.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AnchapaxiArielP2"
+    xmlns:local="clr-namespace:AnchapaxiArielP2.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Recarga telefónica">
 
     <Tab>
         <ShellContent
-        Title="Home"
+        Title="Menú principal"
         ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+        <ShellContent
+        Title="Recarga Telefónica"
+        ContentTemplate="{DataTemplate local:TelephoneRechargePage}"
+        Route="MainPage" />
+        <ShellContent
+        Title="Acerca"
+        ContentTemplate="{DataTemplate local:AboutPage}"
         Route="MainPage" />
     </Tab>
 
