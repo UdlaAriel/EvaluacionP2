@@ -4,9 +4,42 @@
              x:Class="AnchapaxiArielP2.Views.AboutPage"
              Title="AboutPage">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
         <Label 
-            Text="Welcome to .NET MAUI!"
+            BackgroundColor="Red"
+            Text="Ariel"
+            Style="{StaticResource NombreTextColor}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Background="Aqua"
+            Text="Mateo"
+            Style="{StaticResource NombreTextColor}"
+            Grid.Column="1"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Background="Azure"
+            Text="Anchapaxi"
+            Grid.Column="0"
+            Grid.Row="1"
+            Style="{StaticResource ApellidoTextColor}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            BackgroundColor="Green"
+            Text="Moreta"
+            Grid.Column="1"
+            Grid.Row="1"
+            Style="{StaticResource ApellidoTextColor}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </Grid>
