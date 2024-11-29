@@ -11,14 +11,17 @@
         <ShellContent
         Title="Menú principal"
         ContentTemplate="{DataTemplate local:MainPage}"
+        Icon="dotnet_bot.png"
         Route="MainPage" />
         <ShellContent
         Title="Recarga Telefónica"
         ContentTemplate="{DataTemplate local:TelephoneRechargePage}"
+            Icon="dotnet_bot.png"
         Route="TelephoneRechargePage" />
         <ShellContent
         Title="Acerca"
         ContentTemplate="{DataTemplate local:AboutPage}"
+            Icon="dotnet_bot.png"
         Route="AboutPage" />
     </TabBar>
 
