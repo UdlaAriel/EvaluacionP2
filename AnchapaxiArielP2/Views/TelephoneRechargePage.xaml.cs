@@ -48,6 +48,8 @@ public partial class TelephoneRechargePage : ContentPage
         File.WriteAllText(fullFileName, TextEditorName.Text + "," + TextEditorNumber.Text);
         LoadInformation(fullFileName);
 
+        await DisplayAlert("Alert", "Todo ok ;)", "OK");
+
         await Navigation.PopToRootAsync();
     }
 }
